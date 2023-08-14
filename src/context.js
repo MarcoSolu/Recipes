@@ -5,7 +5,7 @@ const AppContext = createContext();
 
 export const useAppContext = () => useContext(AppContext);
 
-const apiKey = 'c32047bb34cf431eb1e9fc7bc8279a05';
+const apiKey = process.env.REACT_APP_API_KEY;
 
 export function AppContextProvider({ children }) {
     const [recipes, setRecipes] = useState([]);

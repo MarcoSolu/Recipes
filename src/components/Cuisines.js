@@ -41,6 +41,7 @@ const Cuisines = () => {
     const cuisinesFilter = cousinesList.map(item => {
       return (
           <option
+              className='option-value'
               value={item}
           >
               {item}
@@ -48,6 +49,8 @@ const Cuisines = () => {
       )
   })
 
+
+  
   return (
     <div className='cuisines-div'>
         <h2>Cuisine:</h2>

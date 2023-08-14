@@ -30,6 +30,7 @@ const MealsType = () => {
     const mealsTypeFilter = mealsTypeOptions.map(item => {
         return (
             <option
+            className='meal-select' 
                 value={item}
             >
                 {item}
@@ -45,7 +46,10 @@ const MealsType = () => {
           onChange={handleMealsTypeChange}
           className='form-control'
         >
-          <option value=''>Select a meal type...</option>
+          <option
+          value=''>
+            Select a meal type...
+            </option>
           {mealsTypeFilter}
         </select>
     </div>

@@ -9,15 +9,11 @@ import striptags from 'striptags';
 
 const ExtractDetails = ({ id }) => {
 
-    console.log(id);
-
     const [isDetailsLoading, setIsDetailsLoading] = useState(false)
     const [isDetailsError, seIstDetailsError] = useState(false)
     const [details, setDetails] = useState([]);
 
     const { apiKey } = useAppContext();
-
-    console.log(details);
 
     const fetchDetailsData = async () => {
         try {

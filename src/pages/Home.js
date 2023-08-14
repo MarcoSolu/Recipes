@@ -6,6 +6,7 @@ import Loader from "../components/Loader";
 import Intolerances from "../components/Intolerances";
 import Cuisines from "../components/Cuisines";
 import MealsType from "../components/MealsType";
+import { Helmet } from 'react-helmet';
 
 const Home = () => {
 
@@ -14,17 +15,22 @@ const Home = () => {
   
   const elements = recipes.map(recipe => {
     return (
+      <>
+      <Helmet>
+        <title>Home - Vegetarian Recipe</title>
+      </Helmet>
       <div key={recipe.id} className="card">
+        <img src={recipe.image} className="card-img-top" alt="..." />
         <div className="card-body">
-          <img src={recipe.image} className="card-img-top" alt="..." />
-          <div className="recipes-info">
             <span className="card-title text-center text-wrap">{recipe.title}</span>
-            <Link to={`/details/${recipe.id}`}>
-              <button type="button" className="btn btn-success">More Info</button>
-            </Link>
-          </div>
+            <div className="button-container">
+              <Link to={`/details/${recipe.id}?title=${encodeURIComponent(recipe.title)}`}>
+                <button type="button" className="btn btn-success">More Info</button>
+              </Link>
+            </div>
         </div>
       </div>
+      </>
     )
   })
 
