@@ -46,8 +46,7 @@ export function AppContextProvider({ children }) {
             setIsLoading(false)
         }
     }
-
-
+ 
     useEffect(() => {
         fetchData()
       }, [])
